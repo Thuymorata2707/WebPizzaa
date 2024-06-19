@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Home</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!--Begin: Header -->
+    <header id="header">
+        <!-- Form cart -->
+        <div class="cart-drawer" id="cart-empty">
+            <div class="drawer__header">
+                <!-- 0000 -->
+                <h4>Your Cart</h4>
+            </div>
+            <div class="cart-container">
+                <p>Your cart is curently empty.</p>
+                <a href="/" class="flex">Continue Shopping</a>
+            </div>
+            <div class="close" onclick="javascript:CloseItem('cart-empty');">
+                <i class="close fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <!-- Search -->
+        <div class="search" id="search">
+            <div class="inp_search">
+                <input type="search" name="" placeholder="Search Out Store" id="">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="close" onclick="javascript:CloseItem('search');">
+                <i class="close fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <nav class="nav flex align-center">
+            <!-- Begin: Logo -->
+            <div class="logo">
+                <a href="/">
+                    <img src="./assets/imgs/logo_300x300.avif" alt="">
+                </a>
+            </div>
+            <!-- End: Logo -->
+
+            <!-- Begin: List nav -->
+            <ul class="menu-list flex">
+                <li class="menu-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="dropdown-list">
+                        Menu
+                        <i class="fa-solid fa-angle-down"></i>
+                    </a>
+                    <!-- Begin: MENU Dropdown -->
+                    <ul class="dropdown-submenu">
+                        <li class="megamenu">
+                            <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Pizza</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Breads</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Cakes</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Drinks</a>
+                        </li>
+                    </ul>
+                    <!-- End: MENU Dropdown -->
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="dropdown-list">
+                        Collection
+                        <i class="fa-solid fa-angle-down"></i>
+                    </a>
+                    
+                    <!-- Begin: COLLECTION Dropdown -->
+                    <ul class="dropdown-submenu">
+                        <li class="megamenu">
+                            <a href="#product-template" onclick="javascript:closeFormClass('shopify-section'); showForm('product-template', 'shopify-desc');">Home Hut</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#product-template" onclick="javascript:closeFormClass('shopify-section'); showForm('product-template', 'shopify-desc');">Kids box</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#product-template" onclick="javascript:closeFormClass('shopify-section'); showForm('product-template', 'shopify-desc');">My box</a>
+                        </li>
+                        <li class="megamenu">
+                            <a href="#product-template" onclick="javascript:closeFormClass('shopify-section'); showForm('product-template', 'shopify-desc');">Limo & Combo</a>
+                        </li>
+                    </ul>
+                    <!-- End: COLLECTION Dropdown -->
+                </li>
+                <li class="menu-item">
+                    <a href="#about" onclick="javascript:closeFormClass('shopify-section'); showForm('about', 'shopify-desc');">
+                        About
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#contact" onclick="javascript:closeFormClass('shopify-section'); showForm('contact', 'shopify-desc');">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-list-ipd flex">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- End: List nav -->
+            <!-- Begin: Site header -->
+            <div class="site-header__links">
+                <a href="#cart-empty" class="cart__links site-item" id="" onclick="javascript:ShowItem('cart-empty');" aria-controls="cart-empty"
+                aria-expanded="true">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span></span>
+                </a>
+                
+                <a href="#search" class="header-search__links site-item" id="header-search__links" onclick="javascript:ShowItem('search');">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="#account" class="account__links site-item" onclick="javascript:closeFormClass('shopify-section'); showForm('account', 'shopify-desc')">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            </div>
+            <!-- End: Site header -->
+        </nav>
+    </header>
+    <!--End: Header -->
+
+    <main>
+        <!--BEGIN:  Account -->
+        <div id="account" class="account shopify-desc flex">
+            <div class="account-header header-content">
+                <h4>ACCOUNT</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Account</span>
+                </p>
+            </div>
+            <!-- Sign in -->
+            <div id="sign-in" class="account-main sign-in flex">
+                <div class="form">
+                    <form id="signinForm" action="">
+                        <input type="email" name="" placeholder="Email" id="email" class="inp" required>
+                        <input type="password" name="" placeholder="Password" id="password" class="inp" required>
+                        <div class="subm">
+                            <button type="submit">Sign in</button>
+                        </div>
+                        <span class="line"></span>
+                    </form>
+                    <div class="desc-acc flex" >
+                        <a href="#" onclick="ShowItem('forgot-pass'); CloseItem('sign-in')">Forgot your pasword?</a>
+                        <a href="#" onclick="ShowItem('create-acc'); CloseItem('sign-in')">Create account</a>
+                        <a href="#" onclick="javascript:closeForm('account','shopify-section');">Return to Store</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Forgot password -->
+            <div id="forgot-pass" class="account-main forgot-password flex">
+                <div class="form">
+                    <form id="fogotPassForm" action="">
+                        <h2 class="tit">Reset your password</h2>
+                        <p class="desc">We will send you an email to reset your password.</p>
+    
+                        <input type="email" name="" placeholder="Email" id="email-fogot" class="inp" required>
+                        <div class="subm flex">
+                            <button type="submit">Submit</button>
+                            <button class="btn-cancel" onclick="ShowItem('sign-in'); CloseItem('forgot-pass')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Create account -->
+            <div id="create-acc" class="account-main create-account flex">
+                <div class="form">
+                    <form id="createForm" action="">
+                        <input type="text" name="" placeholder="First Name" id="" class="inp" required>
+                        <input type="text" name="" id="" placeholder="Last Name" class="inp" required>
+                        <input type="email" name="" placeholder="Email" id="email-create" class="inp" required>
+                        <input type="password" name="" placeholder="Password" id="password-create" class="inp" required>
+                        <div class="subm">
+                            <button type="submit">Create</button>
+                        </div>
+                    </form>
+                    <div class="desc-acc flex" >
+                        <a href="#" onclick="closeForm('account','shopify-section');">Return to Store</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: Account -->
+        <!-- BEGIN: About Page -->
+        <div id="about" class="about shopify-desc">
+            <div class="header-content">
+                <h4>ABOUT PAGE</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>ABOUT PAGE</span>
+                </p>
+            </div>
+            <div class="about-wrapper">
+                <div class="about-header">
+                    <h3 class="about-heading">Welcome to <span>Pizza Home</span></h3>
+                    <p>Eros ludus laboramus ne eam. Mea inani utamur rationibus eu, his ei assum volutpat. 
+                        Integre dolorem mel an, mei nihil omittam et. Postea regione mentitum ei quo, 
+                        debitis phaedrum conceptam vis at. Fugit choro scriptorem nam an, vel ex possit audire. 
+                        Qui elitr graeci referrentur ad, eu ludus laudem tincidunt vel, ad vim wisi graeci efficiendi.
+                    </p>
+                    <p>-Katherine Issac</p>
+                    <p>FOUNDER - CEO</p>
+                </div>
+                <div class="about-content">
+                    <h3 class="about-heading">Hot and Spicy <span>Pizza House</span></h3>
+                    <p>With Best Hospitality</p>
+                    <div class="about-list flex">
+                        <div class="about-item">
+                            <img class="about-img" src="./assets/imgs/about1.webp" alt="">
+                            <div class="desc">
+                                <p>Veg Exotica Pizza</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <img class="about-img" src="./assets/imgs/about2.webp" alt="">
+                            <div class="desc">
+                                <p>Paneer Soya Supreme</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <img class="about-img" src="./assets/imgs/about3.webp" alt="">
+                            <div class="desc">
+                                <p>Chiken Supreme</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <img class="about-img" src="./assets/imgs/about4.webp" alt="">
+                            <div class="desc">
+                                <p>Country Feast Pizza</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-team">
+                        <h3 class="about-heading">Our Chief <span>Team</span></h3>
+                        <p>Meet our chef makes tasty and spicy pizza</p>
+                        <div class="list flex">
+                            <div class="item">
+                                <div class="img">
+                                    <img src="./assets/imgs/about_chief1.webp" alt="">
+                                    <!-- <div class="bgr-icon"> -->
+                                        <div class="icons">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
+                                <div class="desc">
+                                    <p>Vanessa</p>
+                                    <p>American</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+                                    <img src="./assets/imgs/about_chief2.webp" alt="">
+                                    <!-- <div class="bgr-icon"> -->
+                                        <div class="icons">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>                                <div class="desc">
+                                    <p>Edward</p>
+                                    <p>Italian</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+                                    <img src="./assets/imgs/about_chief3.webp" alt="">
+                                    <!-- <div class="bgr-icon"> -->
+                                        <div class="icons">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>                                <div class="desc">
+                                    <p>Victoria</p>
+                                    <p>Chinese</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img">
+                                    <img src="./assets/imgs/about_chief4.webp" alt="">
+                                    <!-- <div class="bgr-icon"> -->
+                                        <div class="icons">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>                                
+                                <div class="desc">
+                                    <p>Christopher</p>
+                                    <p>Hut Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-info-box">
+                <div class="about-info-content">
+                    <h3><span>Join Us:</span> Let's Make Launch Great</h3>
+                    <p>Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
+                    <div class="mutiple-btns">
+                        <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: About Page -->
+        <!-- BEGIN: Contact us -->
+        <div id="contact" class="contact shopify-desc">
+            <div class="header-content">
+                <h4>CONTACT US</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Contact US</span>
+                </p>
+            </div>
+            <map class="my-map" name="my_address">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.65746195711!2d105.7827390078238!3d21.04638753854109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abb158a2305d%3A0x5c357d21c785ea3d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyDEkGnhu4duIEzhu7Fj!5e0!3m2!1svi!2s!4v1682603290103!5m2!1svi!2s" 
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </map>
+            <div class="contact-content">
+                <div class="contact-list flex">
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p><span>Toll-Free:</span> 0123 -456 - 789</p>
+                        <p><span>Fax:</span>  0123 -456 -789</p>
+                    </div>
+                    <!-- Mail -->
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="">
+                            <p>mail@example.com</p>
+                        </a>
+                        <a href=""><p>support@example.com</p></a>
+                    </div>
+                    <!-- Address -->
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        <h4>Address</h4>
+                        <p>No: 58 A, East Madison Street<br>, Baltimore, MD, USA 4508</p>
+                    </div>
+                </div>
+                <div class="contact-form form">
+                    <form action="">
+                        <input type="text" name="" id="" placeholder="Name">
+                        <input type="email" name="" id="" placeholder="Email">
+                        <input type="tel" name="" id="" placeholder="Phone">
+                        <textarea name="" placeholder="Message" id="" cols="30" rows="10"></textarea>
+                        <div class="mutiple-btns">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- END: Contact us -->
+        <!-- BEGIN: Shifter-->
+        <div id="shifter-page" class="shifter-page shopify-desc">
+            <div class="header-content">
+                <h4>FAQ'S</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Faq's</span>
+                </p>
+            </div>
+            <div class="home-faq-block">
+                <div class="faq-template">
+                    <div class="faq-heading">
+                        <h4 class="heading">FAQ Block</h4>
+                        <p class="sub-heading">Use this text to share the information which you like!.</p>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4 class="faq-tit">
+                                <span>What are the health benefits of species?</span>
+                            </h4>
+                            <p class="desc">
+                                Volutpat est velit egestas dui. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Mollis aliquam ut porttitor leo a diam sollicitudin. Nec feugiat in fermentum posuere. Euismod nisi porta lorem mollis aliquam ut porttitor. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. 
+                                Fermentum leo vel orci porta non pulvinar neque. Orci dapibus ultrices in iaculis nunc sed.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-tit">
+                                <span>How will my order be delivered to me?</span>
+                            </h4>
+                            <p class="desc">
+                                Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Morbi tristique senectus et netus et malesuada. Ultricies tristique nulla aliquet enim tortor at auctor. Accumsan lacus vel facilisis volutpat est. Scelerisque viverra mauris in aliquam sem. Nec dui nunc mattis enim ut tellus elementum sagittis vitae. Orci eu lobortis elementum nibh. Nibh ipsum consequat nisl vel pretium lectus quam. 
+                                Ac odio tempor orci dapibus ultrices. Tincidunt vitae semper quis lectus nulla.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-tit">
+                                <span>How will I know if order is placed successfully?</span>
+                            </h4>
+                            <p class="desc">
+                                Feugiat vivamus at augue eget arcu dictum varius duis. Egestas dui id ornare arcu. Malesuada fames ac turpis egestas sed. Pellentesque id nibh tortor id aliquet lectus proin nibh. Varius duis at consectetur lorem donec massa sapien. Sodales neque sodales ut etiam sit amet. Nunc sed velit dignissim sodales ut. Arcu risus quis varius quam quisque id diam vel. 
+                                Leo a diam sollicitudin tempor id eu. Ac tortor dignissim convallis aenean et tortor at.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-tit">
+                                <span>How do I check the status of my order?</span>
+                            </h4>
+                            <p class="desc">
+                                At consectetur lorem donec massa sapien. Fames ac turpis egestas integer eget aliquet nibh praesent. Netus et malesuada fames ac turpis. Orci ac auctor augue mauris augue neque. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Eu lobortis elementum nibh tellus molestie nunc non blandit. Ullamcorper eget nulla facilisi etiam dignissim. 
+                                Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Erat nam at lectus urna duis convallis convallis.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-tit">
+                                <span>Can I cancel my order?</span>
+                            </h4>
+                            <p class="desc">Erat nam at lectus urna duis convallis convallis. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Odio euismod lacinia at quis. Sem nulla pharetra diam sit amet nisl suscipit adipiscing. Enim diam vulputate ut pharetra sit amet. Non tellus orci ac auctor augue mauris augue. 
+                                Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis. Magna ac placerat vestibulum lectus mauris.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Shifter page-->
+        <!-- BEGIN: Shipping deatail-->
+        <div id="shipping_deatail-page" class="shipping_deatail-page shopify-desc">
+            <div class="header-content">
+                <h4>SHIPPING DETAILS</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Shipping Details</span>
+                </p>
+            </div>
+            <div class="shipping-container">
+                <div class="item">
+                    <h4>Returns policy</h4>
+                    <p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).</p>
+                    <p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).</p>
+                    <p>If you need to return an item, simply login to your account, view the order using the 'Complete Orders' link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.</p>
+                </div>
+                <div class="item">
+                    <h4>Shipping details</h4>
+                    <p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.</p>
+                    <p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.</p>
+                    <p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>
+                </div>
+            </div>
+        </div>
+        <!-- END: Shipping deatail-->
+        <!-- BEGIN: Collection-->
+        <div id="collection-template" class="collection-template shopify-desc">
+            <div class="header-content">
+                <h4>COLLECTIONS</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Featured Product</span>
+                </p>
+            </div>
+            <div class="container flex">
+                <div class="sticky-Sidebar">
+                    <div class="menu-sticky categories" >
+                        <h4 class="sidebar-title">Categories</h4>
+                        <ul class="sidebar-list">
+                            <li class="sidebar-item">
+                                <h4 class="sidebar-heading">Sort Drinks</h4>
+                                <ul class="sidebar-item-desc">
+                                    <li >
+                                        <a href="">Soda</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Milk Shake</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Tea</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <h4 class="sidebar-heading">Pizza</h4>
+                                <ul class="sidebar-item-desc">
+                                    <li >
+                                        <a href="">Margherita</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Cheese Pizza</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Chicken Cheese</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <h4 class="sidebar-heading">Burger</h4>
+                                <ul class="sidebar-item-desc">
+                                    <li >
+                                        <a href="">Chicken Double</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Extra Long Burger</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Veggi Manchow</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#">Sandwich</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#">Hot Drinks</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#">Cocktail</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <h4 class="sidebar-heading">Snacks</h4>
+                                <ul class="sidebar-item-desc">
+                                    <li >
+                                        <a href="">Cheese Roll</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Spicy Rolls</a>
+                                    </li>
+                                    <li >
+                                        <a href="">Paneer Pasta</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-sticky dish">
+                        <h5 class="sidebar-title">Dish</h5>
+                        <ul class="sidebar-item">
+                            <li>
+                                <input type="radio" name="" id="Non-Veg">
+                                <label for="Non-Veg">Non-Veg</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="" id="Veg">
+                                <label for="Veg">Veg</label>
+                            </li>
+                        </ul>
+                        <button type="submit">Clear</button>
+                        <button type="submit">Apply</button>
+                    </div>
+        
+                    <div class="menu-sticky size-coll">
+                        <h4 class="sidebar-title">Size</h4>
+                        <ul class="sidebar-item">
+                            <li>
+                                <input type="radio" name="" id="S">
+                                <label for="S">S</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="" id="M">
+                                <label for="M">M</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="" id="L">
+                                <label for="L">L</label>
+                            </li>
+                        </ul>
+                        <button type="submit">Clear</button>
+                        <button type="submit">Apply</button>
+                    </div>
+                    <div class="menu-sticky menu-price">
+                        <h4 class="sidebar-title">Price</h4>
+                        <p style=" margin-bottom: 24px;">The highest price is <span style="color: red;">$823.00</span></p>
+                        <div class="field">
+                            <label for="">From $</label>
+                            <input type="number" name="" id="" placeholder="0" min="0" max="899.000">
+                        </div>
+                        <div class="field">
+                            <label for="">To $</label>
+                            <input type="number" name="" id="" placeholder="899.000" min="0" max="899.000">
+                        </div>
+                        <button type="submit">Clear</button>
+                        <button type="submit">Apply</button>
+                    </div>
+                </div>
+                <div class="colection-grid">
+                    <div class="collection-header flex">
+                        <div class="sortby" >
+                            <label for="SortBy">Sort By</label>
+                            <select name="SortBy" id="SortBy" class="select-hidden-accessible" aria-hidden="true">
+                                <option value="manual">Featured</option>
+                                <option value="best-selling">Best selling</option>
+                                <option value="title-ascending">Alphabetically, A-Z</option>
+                                <option value="title-descending">Alphabetically, Z-A</option>
+                                <option value="price-ascending" selected="" data-select2-id="select2-data-8-wbmz">Price, low to high</option>
+                                <option value="price-descending">Price, high to low</option>
+                                <option value="created-ascending">Date, old to new</option>
+                                <option value="created-descending">Date, new to old</option>
+                              </select>
+                        </div>
+                        <div class="collection-items-per-page">
+                            <label for="paginateBy">Paginate by</label>
+                            <select name="paginateBy" id="paginateBy" class="select-hidden-accessible" aria-hidden="true">
+                              <option value="9">9</option>
+                              <option value="12">12</option>
+                              <option value="16">16</option>
+                              <option value="20">20</option>
+                              <option value="24">24</option>
+                              <option value="30">30</option>
+                              <option value="48">48</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="collection-container">
+                        <!--  -->
+                        <div class="tabs-content-coll">
+                            <ul class="swiper-wrapper flex">
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ck1.webp" alt=""></a>
+                                        <p>Veg Exotica</p>
+                                        <p class="money">$559.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ck2.webp" alt=""></a>
+                                        <p>Spicy Veggie Cheese</p>
+                                        <p class="money">$459.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ck3.webp" alt=""></a>
+                                        <p>Spinach Cheese Pizza</p>
+                                        <p class="money">$559.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/mu1.webp" alt=""></a>
+                                        <p>Paneer Cupicum Supreme</p>
+                                        <p class="money">$559.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/mu2.webp" alt=""></a>
+                                        <p>Spicy Veggie Cheese</p>
+                                        <p class="money">$559.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/mu3.webp" alt=""></a>
+                                        <p>Soya Cheese Masala</p>
+                                        <p class="money">$559.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ba1.webp" alt=""></a>
+                                        <p>Veggie Feast Pizza</p>
+                                        <p class="money">$259.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ba2.webp" alt=""></a>
+                                        <p>Spicy Cheese Chicken</p>
+                                        <p class="money">$259.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                                <li class="item">
+                                    <div class="product-container">
+                                        <a href=""><img src="./assets/imgs/ba3.webp" alt=""></a>
+                                        <p>Paneer Soya Supreme</p>
+                                        <p class="money">$299.00</p>
+                                        <div class="imagetWrapper">
+                                        <div class="product-btn">
+                                            <a class="link-product" href="">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a class="search-product" href="#">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </li>
+                            </ul>                            
+                        </div>
+                    </div>
+                    <div class="pagination-coll">
+                        <span><</span>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <span>></span>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            
+              
+        </div>
+        <!-- Begin: Product collection -->
+        <div class="product-colleciton">
+            <ul class="grid-product-collection">
+                <li class="grid-item-product item-product flex">
+                    <div class="close close-product">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="sidebar-img">
+                        <img src="./assets/imgs/ck1.webp" alt="">
+                    
+                    </div>
+                    <div class="sidebar">
+                        <h4>Cheese Potato Pizza</h4>
+                        <div class="product-price">           
+                            <h6>Price: </h6>
+                            <span class="money">$599.00</span>
+                        </div>
+                        <div class="product-size">
+                            <h6 for="product-select-Size">Size:</h6>
+                            <select id="product-select-Size">
+                                <option selected="">
+                                    L
+                                </option>
+                                <option>
+                                    M
+                                </option>
+                                <option>
+                                    S
+                                </option>
+                                </select>
+                        </div>
+                        <div class="menu-sticky dish">
+                            <div class="sidebar-item">
+                                <h6>Dish: </h6>
+                                <span>
+                                    <input type="radio" name="dish-choice-proc" checked id="Non-Veg">
+                                    <label for="Non-Veg" style="margin-right: 8px;">Non-Veg</label>
+                                </span>
+                                <span>
+                                    <input type="radio" name="dish-choice-proc" id="Veg">
+                                    <label for="Veg">Veg</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="product-quantity">
+                            <h6>Quantity:</h6>
+                            <input type="number" value="1" min="1" name="" id="" >
+                        </div>
+                        <div class="menu-sticky">
+                            <button>Add to Cart</button>
+                            <button>Buy it now</button>
+                        </div>
+                    </div>
+                </li>
+                <!-- More.... -->
+            </ul>
+        </div>
+        <!-- End: Product collection -->
+        <!-- END: Collection-->
+        <!-- BEGIN: Product-->
+        <div id="product-template" class="product-template shopify-desc">
+            <div class="header-content">
+                <h4>PRODUCT</h4>
+                <p>
+                    <a href="/">Home</a>
+                    <span>Product</span>
+                </p>
+            </div>
+            <div class="product-template-container">
+                <ul class="list-product">
+                    <li class="item-product flex">
+                        <div class="sidebar-img">
+                            <img src="./assets/imgs/ck1.webp" alt="">
+                        </div>
+                        <div class="sidebar">
+                            <h4>Cheese Potato Pizza</h4>
+                            <div class="product-price">           
+                                <h6>Price: </h6>
+                                <span class="money">$599.00</span>
+                            </div>
+                            <div class="product-size">
+                                <h6 for="product-select-Size">Size:</h6>
+                                <select id="product-select-Size">
+                                    <option selected="">
+                                        L
+                                    </option>
+                                    <option>
+                                        M
+                                    </option>
+                                    <option>
+                                        S
+                                    </option>
+                                    </select>
+                            </div>
+                            <div class="product-crust">
+                                <h6>Crust: </h6>
+                                <p>Hand Tossed</p>
+                            </div>
+                            <div class="menu-sticky dish">
+                                <div class="sidebar-item">
+                                    <h6>Dish: </h6>
+                                    <span>
+                                        <input type="radio" name="dish-choice" checked id="Non-Veg">
+                                        <label for="Non-Veg" style="margin-right: 8px;">Non-Veg</label>
+                                    </span>
+                                    <span>
+                                        <input type="radio" name="dish-choice" id="Veg">
+                                        <label for="Veg">Veg</label>
+                                    </span>
+                                </div>
+                            </div>
+        
+                            <div class="product-vendor">
+                                <h6 >Vendor:</h6>
+                                <a href="" title="Pizza">Pizza</a>
+                            </div>
+            
+                            <div class="product-type" >
+                                <h6 >Type:</h6>
+                                <span>Pizza House</span>
+                            </div>
+            
+                            <div class="product-avaibility" >
+                                <h6 >Avaibility:</h6>
+                                <span>In stock!</span>
+                            </div>
+            
+                            <div class="product-quantity">
+                                <h6>Quantity:</h6>
+                                <input type="number" value="1" min="1" name="" id="" >
+                            </div>
+                            <div class="menu-sticky">
+                                <button>Add to Cart</button>
+                                <button>Buy it now</button>
+                                <button>Add to WishList</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="product-tab">
+                <div class="tabs-container">
+                  <div class="dt-sc-tabs">       
+                    <button class="tablinks active" onclick="openTab(event, 'tab-description')">Product Description</button>
+                    <button class="tablinks" onclick="openTab(event, 'tab-custom')">Additional information</button>
+                    <button class="tablinks" onclick="openTab(event, 'tab-review')">Reviews</button>
+                  </div>
+                </div>
+                <div class="tabs-content-list">
+                    <div class="tabs-content" id="tab-description">
+                        <div class="desc-p">
+                            <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec pretium egestas sapien et mollis.</p>
+                            <h4 class="desc">Lorem ipsum dolor sit amet</h4>
+                            <p>Sonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <h4 class="desc">Busey ipsum dolor sit amet</h4>
+                            <p>Tortor at auctor urna nunc id cursus metus aliquam. Odio tempor orci dapibus ultrices. Tortor condimentum lacinia quis vel eros donec ac odio. Velit euismod in pellentesque massa placerat duis ultricies lacus. Scelerisque purus semper eget duis at tellus at urna condimentum. Eu facilisis sed odio morbi quis commodo odio aenean urpis massa sed elemen.</p>
+                            <h4 class="desc">Vestibulum sit amet ipsum</h4>
+                            <p>Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos dui. Cras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper neque. Sed vitae mi a mi pretium aliquet ac sed elit. Pellentesque nulla eros accumsan quis justo at tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus pulvinar. Vestibulum sit amet auctor ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="tabs-content" id="tab-custom">
+                        <div class="shipping-container">
+                            <div class="item">
+                                <h4>Returns policy</h4>
+                                <p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).</p>
+                                <p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).</p>
+                                <p>If you need to return an item, simply login to your account, view the order using the 'Complete Orders' link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.</p>
+                            </div>
+                            <div class="item">
+                                <h4>Shipping details</h4>
+                                <p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.</p>
+                                <p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.</p>
+                                <p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-content" id="tab-review">
+                        <div class="desc-p">
+                            <div class="review-title">
+                                <h4>Customer Reviews</h4>
+                                <div class="rate-review flex">
+                                    <div class="rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        Based on 1 review
+                                    </div>
+                                    <div class="mutiple-btns">
+                                        <button>Write a review</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-body">
+                                <div class="rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <h4>American Brewhouse King</h4>
+                                <p><strong>keerthana on Jul 23, 2018</strong></p>
+                                <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec pretium egestas sapien et mollis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recomended-products">
+                <div class="recomended-header">
+                    <h4>Recommended products</h4>
+                </div>
+                <div class="tabs-content-coll">
+                    <ul class="swiper-wrapper flex">
+                        <li class="item">
+                            <div class="product-container">
+                                <a href=""><img src="./assets/imgs/mu3.webp" alt=""></a>
+                                <p>Soya Cheese Masala</p>
+                                <p class="money">$559.00</p>
+                                <div class="imagetWrapper">
+                                <div class="product-btn">
+                                    <a class="link-product" href="">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                    <a class="search-product" href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>                                    
+                        </li>
+                        <li class="item">
+                            <div class="product-container">
+                                <a href=""><img src="./assets/imgs/ba1.webp" alt=""></a>
+                                <p>Veggie Feast Pizza</p>
+                                <p class="money">$259.00</p>
+                                <div class="imagetWrapper">
+                                <div class="product-btn">
+                                    <a class="link-product" href="">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                    <a class="search-product" href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>                                    
+                        </li>
+                        <li class="item">
+                            <div class="product-container">
+                                <a href=""><img src="./assets/imgs/ba2.webp" alt=""></a>
+                                <p>Spicy Cheese Chicken</p>
+                                <p class="money">$259.00</p>
+                                <div class="imagetWrapper">
+                                <div class="product-btn">
+                                    <a class="link-product" href="">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                    <a class="search-product" href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>                                    
+                        </li>
+                    </ul>                            
+                </div>
+            </div>
+        </div>
+        <!-- END: Product-->
+
+        <!-- ========= MAIN ===================================================================================================================================================================== -->
+        
+        <!-- Begin: Sider -->
+        <div id="slider-section" class="shopify-section">
+            <div class="slider-container">
+                <div class="slider-wrapper flex">
+                    <!-- 1 -->
+                    <div class="slider_style slider_style-1 flex fade">
+                        <a href="#" class="slider-bgr slider-bgr-1">
+                            <!-- <img src="./assets/imgs/1.webp" alt=""> -->
+                        </a>
+                        <div class="slider-content">
+                            <div class="slider flex">
+                                <div class="slider-sub-heading">
+                                    <p>Get Free Farlic Bread</p>
+                                </div>
+                                <div class="slider-heading">
+                                    <h3>
+                                       <span> Double the cheese,</span> <br>
+                                        <span>double the fun</span>
+                                    </h3>
+                                </div>
+                                <div class="slider-text">
+                                    <p>Buy one regular &<br>
+                                        <span>Get one Free</span>
+                                    </p>
+                                </div>
+                                <div class="mutiple-btns">
+                                    <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="slider_style slider_2 flex">
+                        <a href="#" class="slider-bgr slider-bgr-2">
+                            <!-- <img src="./assets/imgs/2.webp" alt=""> -->
+                        </a>
+                        <div class="slider-content">
+                            <div class="slider flex">
+                                <div class="slider-sub-heading">
+                                    <p>Chicken cheesy bytes / Limited Time only</p>
+                                </div>
+                                <div class="slider-heading">
+                                    <h3>
+                                       <span>More cheese,</span> <br>
+                                        <span>More way to eat.</span>
+                                    </h3>
+                                </div>
+                                <div class="slider-text">
+                                    <p>Buy one regular &<br>
+                                        <span>Get one Free</span>
+                                    </p>
+                                </div>
+                                
+                                <div class="mutiple-btns">
+                                    <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="slider_style flex">
+                        <a href="#" class="slider-bgr slider-bgr-3">
+                            <!-- <img src="./assets/imgs/3.webp" alt=""> -->
+                        </a>
+                        <div class="slider-content">
+                            <div class="slider flex">
+                                <div class="slider-sub-heading">
+                                    <p>Limited time only</p>
+                                </div>
+                                <div class="slider-heading">
+                                    <h3>
+                                       <span>Every day value offer!</span> <br>
+                                        <span>More way to eat.</span>
+                                    </h3>
+                                </div>
+                                <div class="slider-text">
+                                    <p>get any two meduium pizzas worth<br>
+                                        <span>rs. 249 each</span>
+                                    </p>
+                                </div>
+                                <div class="mutiple-btns">
+                                    <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="slider_style flex">
+                        <a href="#" class="slider-bgr slider-bgr-4">
+                            <!-- <img src="./assets/imgs/4.webp" alt=""> -->
+                        </a>
+                        <div class="slider-content">
+                            <div class="slider flex">
+                                <div class="slider-sub-heading">
+                                    <p>Chicken cheese bytes / limited time only</p>
+                                </div>
+                                <div class="slider-heading">
+                                    <h3>
+                                       <span>Every day value offer!</span> <br>
+                                        <span>More way to eat.</span>
+                                    </h3>
+                                </div>
+                                <div class="slider-text">
+                                    <p>Buy one regular &<br>
+                                        <span>Get one Free</span>
+                                    </p>
+                                </div>
+                                <div class="mutiple-btns">
+                                    <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <!-- End: Sider -->
+        <!-- BEGIN: GRID BANNER -->
+        <div id="grid-banner-section" class="shopify-section">
+            <div class="pding">
+                <div class="container flex">
+                    <div class="grid-banner">
+                        <img src="./assets/imgs/grid-banner-img.jpg" alt="">
+                    </div>
+                    <div class="additional-grids flex">
+                        <div class="heading">
+                            <h4>Welcome to Pizza House</h4>
+                        </div>
+                        <div class="support-block-list flex">
+                            <div class="support-block">
+                                <a href="">
+                                    <div class="support-icon-img">
+                                        <img src="./assets/imgs/icon-1_180x.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="support-block">
+                                <a href="">
+                                    <div class="support-icon-img">
+                                        <img src="./assets/imgs/icon-2_180x.webp" alt="">
+                                    </div>
+                                </a>
+                            </div><div class="support-block">
+                                <a href="">
+                                    <div class="support-icon-img">
+                                        <img src="./assets/imgs/icon-3_180x.webp" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="heading-desc">
+                            <p>Our chefs are working 24/7 and are ready to accept visitors and at any time of the day and night</p>
+                            <a href="#">
+                                <div class="mutiple-btns">
+                                    <button onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">View all collection</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: GRID BANNER -->
+        <!-- BEGIN: IMAGE BAR -->
+        <div id="img-bar__section" class="shopify-section">
+            <div class="pding">
+                <div class="container">
+                    <div class="img-bar__section-inner">
+                        <ul class="img-bar__list flex">
+                            <li class="img-bar__item">
+                                <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');"><img src="./assets/imgs/img3_970x.jpg" alt=""></a>
+                            </li>
+                            <li class="img-bar__item">
+                                <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');"><img src="./assets/imgs/img4_970x.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: IMAGE BAR -->
+        <!-- BEGIN: HOME PRODUCT TAP -->
+        <div id="home-product-tab" class="shopify-section">
+            <div class="container bgvProductTab pding">
+                <div class="dc-heading">
+                    <h4>New <span>Arrivals</span></h4>
+                </div>
+                <div class="group-content">
+                    <div class="tabs-wrapper">
+                        <div class="tabs flex">
+                            <p class="tablinks active" onclick="openTab(event, 'chicken');">Chicken</p>
+                            <p class="tablinks" onclick="openTab(event, 'mushrooms');">Mushrooms</p>
+                            <p class="tablinks" onclick="openTab(event, 'bacon');">Bacon</p>
+                            <!-- onclick="showFormFlex('bacon', 'swiper-wrapper');" -->
+                        </div>
+                        <!--  -->
+                        <!--  -->
+                        <div class="tabs-container">
+                            <div class="">
+                                <!-- Chicken -->
+                                <ul id="chicken" class="swiper-wrapper tabs-content flex">
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ck1.webp" alt=""></a>
+                                            <p>Veg Exotica</p>
+                                            <p class="money">$559.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ck2.webp" alt=""></a>
+                                            <p>Spicy Veggie Cheese</p>
+                                            <p class="money">$459.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ck3.webp" alt=""></a>
+                                            <p>Spinach Cheese Pizza</p>
+                                            <p class="money">$559.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                </ul>
+                                
+                                <!-- Mushrooms -->
+                                <ul id="mushrooms" class="swiper-wrapper tabs-content flex">
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/mu1.webp" alt=""></a>
+                                            <p>Paneer Cupicum Supreme</p>
+                                            <p class="money">$559.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/mu2.webp" alt=""></a>
+                                            <p>Soya Cheese Masala</p>
+                                            <p class="money">$559.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/mu3.webp" alt=""></a>
+                                            <p>Veggie Freast Pizza</p>
+                                            <p class="money">$559.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                </ul>
+                                
+                                <!-- Bacon -->
+                                <ul  id="bacon"  class="swiper-wrapper tabs-content flex">
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ba1.webp" alt=""></a>
+                                            <p>Spicy Crispy Chicken</p>
+                                            <p class="money">$259.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ba2.webp" alt=""></a>
+                                            <p>Spicy Cheese Chicken</p>
+                                            <p class="money">$259.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-container">
+                                            <a href=""><img src="./assets/imgs/ba3.webp" alt=""></a>
+                                            <p>Spiced Chicken Meatballs</p>
+                                            <p class="money">$299.00</p>
+                                            <div class="imagetWrapper">
+                                            <div class="product-btn">
+                                                <a class="link-product" href="">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </a>
+                                            </div>
+                                        </div>                                    
+                                    </li>
+                                </ul>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-right">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+        <!-- END: HOME PRODUCT TAP -->
+        <!-- BEGIN: HOME grid Banner -->
+        <div id="home-grid-banner" class="home-grid-banner shopify-section">
+            <div class="container-fluid">
+                <div class="grid-banner-content">
+                    <h3>Discount For All Orders Over $100</h3>
+                    <p class="txt-fw">We're at 71% of our goal!</p>
+                    <p>That's $56,715.00 USD pledged of our $79,600.00 USD target!
+                        <br>
+                        Estimated delivery: April 14-24
+                    </p>
+    
+                    <a href="#collection-template" onclick="javascript:closeFormClass('shopify-section'); showForm('collection-template', 'shopify-desc');">
+                        <div class="mutiple-btns">
+                            <button>View more</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- END: HOME grid Banner -->
+        <!-- BEGIN: HOME Support -->
+        <div id="home-suport" class="shopify-section">
+            <div class="container home-suport-section pding">
+                <div class="dc-heading">
+                    <h4>Most <span>Loved</span></h4>
+                </div>
+                <div class="home-support-list flex">
+                    <div class="home-support-item">
+                        <img src="./assets/imgs/icon-9_200x200.png" alt="">
+                        <h4>See Every Detail</h4>
+                        <p>Dapibus ultrices in iaculis nunc sed. Consequat mauris nunc congue nisi. Varius morbi enim nunc faucibus a pellentesque sitmal</p>
+                    </div>
+                    <div class="home-support-item">
+                        <img src="./assets/imgs/icon-7_200x200.webp" alt="">
+                        <h4>Get  Alerts</h4>
+                        <p>Pellentesque id nibh tortor id aliquet lectus. Tortor at risus viverra adipiscing at in tellus integer feugiat. Et malesuada fames ac turpis egestas</p>
+                    </div>
+                    <div class="home-support-item">
+                        <img src="./assets/imgs/icon-8_200x200.webp" alt="">
+                        <h4>Talk and Listen</h4>
+                        <p>Vitae tempus quam pellentesque nec nam. Vitae tortor condimentum lacinia quis vel eros donec ac odio. Tempus egestas sed sed risus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: HOME Support -->
+    </main>
+
+    <!--Begin: Footer -->
+    <div id="footer-section" class="flex">
+        <div class="footer-logo">
+            <a href="">
+                <img src="./assets/imgs/footer-logo.avif" alt="">
+            </a>
+        </div>
+        <footer class="footer flex">
+            <div class="footer-header">
+                <div class="footer-news flex">
+                    <div class="news">
+                        <h4>Newsletter</h4>
+                        <p>It's important to have a good customer service, a customer service provider.</p>
+                    </div>
+                    <div class="add-email">
+                        <input type="email" name="" id="" placeholder="Your email address">
+                        <button>Sign in</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-w">
+                <div class="footer-content">
+                    <div class="site-footer">
+                        <div class="footer-list flex">
+                            <div class="footer-text footer-item">
+                                <p>Get the best Pizza made to taste better and linger the memories 
+                                    in your mouth. Create a menu and serve yourself the best pizza 
+                                    in your area.</p>
+                            </div>
+                            <div class="footer-item">
+                                <h5 class="footer-tit">Help</h5>
+                                <ul class="footer-menu">
+                                    <li><a href="">Search</a></li>
+                                    <li><a href="">Help</a></li>
+                                    <li><a href="#shifter-page" onclick="closeFormClass('shopify-section'); showForm('shifter-page', 'shopify-desc');">Information</a></li>
+                                    <li><a href="#contact" onclick="closeFormClass('shopify-section'); showForm('contact', 'shopify-desc');">Privacy Policy</a></li>
+                                    <li><a href="#shipping_deatail-page" onclick="closeFormClass('shopify-section'); showForm('shipping_deatail-page', 'shopify-desc');">Shipping Details</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-item">
+                                <h5 class="footer-tit">Support</h5>
+                                <ul class="footer-menu">
+                                    <li><a href="#contact" onclick="closeFormClass('shopify-section'); showForm('contact', 'shopify-desc');">Contact Us</a></li>
+                                    <li><a href="#about" onclick="closeFormClass('shopify-section'); showForm('about', 'shopify-desc')">About Us</a></li>
+                                    <li><a href="#shifter-page" onclick="closeFormClass('shopify-section'); showForm('shifter-page', 'shopify-desc');">Carrers</a></li>
+                                    <li><a href="">Refunds & Returns</a></li>
+                                    <li><a href="#shipping_deatail-page" onclick="closeFormClass('shopify-section'); showForm('shipping_deatail-page', 'shopify-desc');">Deliveries</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-item">
+                                <h5 class="footer-tit">Information</h5>
+                                <ul class="footer-menu">
+                                    <li><a href="">Search Terms</a></li>
+                                    <li><a href="">Advanced Search</a></li>
+                                    <li><a href="#shifter-page" onclick="closeFormClass('shopify-section'); showForm('shifter-page', 'shopify-desc');">Help & FAQ's</a></li>
+                                    <li><a href="#contact" onclick="closeFormClass('shopify-section'); showForm('contact', 'shopify-desc');">Store Location</a></li>
+                                    <li><a href="#shipping_deatail-page" onclick="closeFormClass('shopify-section'); showForm('shipping_deatail-page', 'shopify-desc');">Orders & Returns</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-item">
+                                <h5 class="footer-tit">Contact us</h5>
+                                <ul class="footer-menu contact-footer">
+                                    <li><a href="" class="none-hover">
+                                        <i class="fa-solid fa-house-chimney"></i>
+                                        <address>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</address>
+                                    </a></li>
+                                    <li><a href="" class="none-hover">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <p>0123456789</p>
+                                    </a></li>
+                                    <li><a href="">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <p>support@example.com</p>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--End: Footer --> 
+</body>
+
+<script src="./main.js"></script>
+</html>
